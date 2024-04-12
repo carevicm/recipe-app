@@ -20,11 +20,12 @@ export class RecipeListComponent implements OnInit {
       'https://img.freepik.com/free-photo/tasty-burger-isolated-white-background-fresh-hamburger-fastfood-with-beef-cheese_90220-1063.jpg'
     ),
   ];
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   onRecipeSelected(recipe: Recipe) {
-    this.recipeWasSelected.emit(recipe);
-   }
+   this.recipeWasSelected.emit(recipe);
+  }
 }
