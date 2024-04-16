@@ -1,25 +1,24 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary ps-4 pe-4">
-  <div class="container-fluid">
-    <a href="#" class="navbar-brand p-2">Recipe Book</a>
+<nav class="navbar navbar-default col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Recipe Book</a>
+    </div>
 
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <ul class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes</a>
-        </ul>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('shopping-list')"
-            >Shopping List</a
-          >
+        <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li>
+        <li>
+          <a href="#" (click)="onSelect('shopping-list')">Shopping List</a>
         </li>
       </ul>
-      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
-          <a class="nav-link dropdown-toggle" href="#" role="button" > Menu </a>
+          <a href="#" class="dropdown-toggle" role="button"
+            >Manage <span class="caret"></span
+          ></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Save Data</a></li>
-            <li><a class="dropdown-item" href="#">Fetch Data</a></li>
+            <li><a href="#">Save Data</a></li>
+            <li><a href="#">Fetch Data</a></li>
           </ul>
         </li>
       </ul>
