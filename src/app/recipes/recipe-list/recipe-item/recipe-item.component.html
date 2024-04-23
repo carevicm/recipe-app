@@ -1,4 +1,6 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelected()">
+<a [routerLink]="[index]" 
+  routerLinkActive="active"
+class="list-group-item clearfix">
   <div class="flex-container">
     <div class="text-container">
       <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
