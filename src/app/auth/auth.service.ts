@@ -6,6 +6,7 @@ import { throwError, BehaviorSubject } from 'rxjs';
 
 import { User } from './user.model';
 
+
 export interface AuthResponseData {
   kind: string;
   idToken: string;
@@ -16,7 +17,7 @@ export interface AuthResponseData {
   registered?: boolean;
 }
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
@@ -26,16 +27,16 @@ export class AuthService {
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCNdh4gZFFD8TlyqtKVBrTWeWZX8VPGRyg',
+        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyCNdh4gZFFD8TlyqtKVBrTWeWZX8VPGRyg",
         {
           email: email,
           password: password,
-          returnSecureToken: true
+          returnSecureToken: true,
         }
       )
       .pipe(
         catchError(this.handleError),
-        tap(resData => {
+        tap((resData) => {
           this.handleAuthentication(
             resData.email,
             resData.localId,
@@ -49,16 +50,16 @@ export class AuthService {
   signin(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCNdh4gZFFD8TlyqtKVBrTWeWZX8VPGRyg',
+        "https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyCNdh4gZFFD8TlyqtKVBrTWeWZX8VPGRyg",
         {
           email: email,
           password: password,
-          returnSecureToken: true
+          returnSecureToken: true,
         }
       )
       .pipe(
         catchError(this.handleError),
-        tap(resData => {
+        tap((resData) => {
           this.handleAuthentication(
             resData.email,
             resData.localId,
@@ -75,7 +76,7 @@ export class AuthService {
       id: string;
       _token: string;
       _tokenExpirationDate: string;
-    } = JSON.parse(localStorage.getItem('userData'));
+    } = JSON.parse(localStorage.getItem("userData"));
     if (!userData) {
       return;
     }
@@ -98,8 +99,8 @@ export class AuthService {
 
   logout() {
     this.user.next(null);
-    this.router.navigate(['/auth']);
-    localStorage.removeItem('userData');
+    this.router.navigate(["/auth"]);
+    localStorage.removeItem("userData");
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);
     }
@@ -122,23 +123,28 @@ export class AuthService {
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
-    localStorage.setItem('userData', JSON.stringify(user));
+    localStorage.setItem("userData", JSON.stringify(user));
   }
 
   private handleError(errorRes: HttpErrorResponse) {
-    let errorMessage = 'An unknown error occurred!';
+    let errorMessage = "An unknown error occurred!";
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);
     }
     switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
+      case "EMAIL_EXISTS":
+        errorMessage = "This email exists already";
         break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
+      case "INVALID_EMAIL":
+        errorMessage = "This email does not exist.";
         break;
-      case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
+        case "EMAIL_NOT_FOUND":
+        errorMessage = "This email does not exist.";
+      case "INVALID_PASSWORD":
+        errorMessage = "This password is not correct.";
+        break;
+      case "INVALID_LOGIN_CREDENTIALS":
+        errorMessage = "This email or password is not correct.";
         break;
     }
     return throwError(errorMessage);
