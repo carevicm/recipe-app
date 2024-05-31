@@ -2,3 +2,34 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
+.second {
+ margin-bottom: 10%;
+
+}
+.form-group {
+  margin-top: 1vh;
+}
+
+button {
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 8px 4px 0px;
+  cursor: pointer;
+}
+.opis {
+margin-top: 3vh;
+margin-bottom: 2vh;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+.unos {
+  width: 114%;
+}
+

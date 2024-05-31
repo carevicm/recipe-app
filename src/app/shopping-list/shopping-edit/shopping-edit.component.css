@@ -1,11 +1,10 @@
 button {
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 8px 0px 0px;
-    cursor: pointer;
-  }
-  
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 8px 0px 0px;
+  cursor: pointer;
+}
