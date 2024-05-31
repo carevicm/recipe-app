@@ -21,7 +21,7 @@ export class DataStorageService {
         'https://recipe-book-21edb-default-rtdb.firebaseio.com/recipes.json',
         recipes
       )
-      .subscribe(response => {
+      .subscribe((response) => {
         console.log(response);
       });
   }
@@ -29,19 +29,18 @@ export class DataStorageService {
   fetchRecipes() {
     return this.http
       .get<Recipe[]>(
-        'https://recipe-book-21edb-default-rtdb.firebaseio.com/recipes.json',
-        
+        'https://recipe-book-21edb-default-rtdb.firebaseio.com/recipes.json'
       )
       .pipe(
-        map(recipes => {
-          return recipes.map(recipe => {
+        map((recipes) => {
+          return recipes.map((recipe) => {
             return {
               ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : []
+              ingredients: recipe.ingredients ? recipe.ingredients : [],
             };
           });
         }),
-        tap(recipes => {
+        tap((recipes) => {
           this.recipeService.setRecipes(recipes);
         })
       );
