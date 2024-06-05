@@ -1,0 +1,7 @@
+.list-group {
+    list-style-type: none;  /* Remove bullets */
+    padding: 0;  /* Remove default padding */
+    max-width: 40%;
+    
+  }
+  

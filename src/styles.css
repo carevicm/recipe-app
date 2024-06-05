@@ -2,3 +2,32 @@
 a {
   cursor: pointer;
 }
+.uspeh {
+  background-color: #2B642B;
+  color: white;
+}
+.uspeh:hover {
+  background-color: #4F8F4F; 
+  color: #F5F5F5;
+}
+
+.osnovno {
+  background-color: #29588F;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.osnovno:hover {
+  background-color: #1a3b5c;
+  color: #ffffff; 
+}
+
+.opasno {
+  background-color: #A82824;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.opasno:hover {
+  background-color: #8f1f1b;
+  color: #ffffff; 
+}

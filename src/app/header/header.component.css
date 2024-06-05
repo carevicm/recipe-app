@@ -1,0 +1,27 @@
+.navbar {
+  background-color: bisque;
+  color: #222422;
+}
+
+.navbar-nav .active > a {
+  background-color: beige !important;
+}
+
+.dropdown-menu {
+  background-color: beige;
+}
+
+.navbar-nav .open a,
+.navbar-nav .open a:focus,
+.navbar-nav .open a:hover {
+  background-color: beige;
+}
+.navbar-brand {
+  color: #222422;
+}
+.a .routerLink {
+  color: #222422;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #222422;
+}

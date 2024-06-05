@@ -5,12 +5,12 @@
         <div class="col-xs-12">
           <button
             type="submit"
-            class="btn btn-success"
+            class="btn uspeh"
             [disabled]="!recipeForm.valid"
           >
             Save
           </button>
-          <button type="button" class="btn btn-danger" (click)="onCancel()">
+          <button type="button" class="btn opasno" (click)="onCancel()">
             Cancel
           </button>
         </div>
@@ -82,7 +82,7 @@
             <div class="col-xs-2">
               <button
                 type="button"
-                class="btn btn-danger"
+                class="btn opasno"
                 (click)="onDeleteIngredient(i)"
               >
                 X
@@ -94,7 +94,7 @@
             <div class="col-xs-12">
               <button
                 type="button"
-                class="btn btn-success "
+                class="btn uspeh"
                 (click)="onAddIngredient()"
               >
                 Add Ingredient

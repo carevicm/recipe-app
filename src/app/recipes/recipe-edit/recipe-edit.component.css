@@ -3,8 +3,7 @@ textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 .second {
- margin-bottom: 10%;
-
+  margin-bottom: 10%;
 }
 .form-group {
   margin-top: 1vh;
@@ -20,16 +19,14 @@ button {
   margin: 4px 8px 4px 0px;
   cursor: pointer;
 }
-.opis {
-margin-top: 3vh;
-margin-bottom: 2vh;
+.btn.focus, .btn:focus, .btn:hover {
+  color: white;
+  text-decoration: none;
 }
-
-.img-responsive {
-  width: 100%;
-  height: auto;
+.opis {
+  margin-top: 3vh;
+  margin-bottom: 2vh;
 }
 .unos {
   width: 114%;
 }
-
