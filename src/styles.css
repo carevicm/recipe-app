@@ -2,6 +2,11 @@
 a {
   cursor: pointer;
 }
+html,
+body {
+  background-color: #f8f6f0 !important;
+}
+
 .uspeh {
   background-color: #2b642b;
   color: white;
