@@ -3,31 +3,31 @@ a {
   cursor: pointer;
 }
 .uspeh {
-  background-color: #2B642B;
+  background-color: #2b642b;
   color: white;
 }
 .uspeh:hover {
-  background-color: #4F8F4F; 
-  color: #F5F5F5;
+  background-color: #4f8f4f;
+  color: #f5f5f5;
 }
 
 .osnovno {
-  background-color: #29588F;
+  background-color: #29588f;
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .osnovno:hover {
   background-color: #1a3b5c;
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 .opasno {
-  background-color: #A82824;
+  background-color: #a82824;
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .opasno:hover {
   background-color: #8f1f1b;
-  color: #ffffff; 
+  color: #ffffff;
 }
